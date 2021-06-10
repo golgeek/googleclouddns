@@ -77,7 +77,7 @@ func (p *Provider) setCloudDNSRecord(ctx context.Context, zone string, values []
 	rrs := dns.ResourceRecordSet{
 		Name:    fullName,
 		Rrdatas: make([]string, 0),
-		Ttl:     int64(values[0].TTL / time.Second),
+		Ttl:     int64(30),
 		Type:    values[0].Type,
 	}
 	for _, record := range values {
